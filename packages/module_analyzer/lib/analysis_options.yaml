@@ -1,0 +1,44 @@
+include: package:flutter_lints/flutter.yaml
+
+# Additional information about this file can be found at
+# https://dart.dev/guides/language/analysis-options
+
+
+analyzer:
+   language:
+     strict-inference: true
+     strict-raw-types: true
+  errors:
+    todo: ignore
+    deprecated_member_use_from_some_package: info
+    derecated_member_use: info
+    dead_code: warning
+  plugins:
+    - dart_code_metrics
+
+  exclude:
+    - analysis_options.yaml
+    - '**/*.g.dart'
+    - '**/*.freezed.dart'
+    - '**/*.confif.dart'
+
+linter:
+  rules:
+    avoid_print: true
+    unawaited_futures: false
+
+dart_code_metrics:
+   anti-patterns:
+      - long-method
+      - long-parametr-list
+   metrics:
+     cyclomatic-complexity: 20
+     lines-of-executable-code: 50
+     maximum-nesting-level: 5
+     number-of-parametrs: 4
+     sourse-lines-of-code: 50
+   metrics-exclude:
+    - test/**
+   rules :
+     - newline-before-return
+
